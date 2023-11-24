@@ -1,0 +1,21 @@
+﻿@model Slider
+<h1>Crate Service</h1>
+<div class="row justify-content-between align-items-center">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Title</label>
+            <input asp-for="Title" type="text" class="form-control">
+
+        </div>
+        <div class="form-group">
+            <label>Decription</label>
+            <input asp-for="Description" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="ImageFile">Image</label>
+            <input asp-for="ImageFile" class="form-control" placeholder="ImageFile">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Created</button>
+    </form>
+</div>

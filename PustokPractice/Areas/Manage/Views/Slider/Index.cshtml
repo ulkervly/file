@@ -1,0 +1,41 @@
+﻿@model List<Slider>
+@{
+    
+    int counter = 0;
+}
+<div class="container-fluid">
+    <a asp-action="Create" asp-controller="Slider" class="btn btn-primary">Create</a>
+    <table class="table table-striped shadow mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><img src="~/assets/image/bg-images/@item.Image" style="max-width:100px" /></td>
+                   
+                       <td>
+                        <a asp-action="edit" asp-controller="slider" asp-route-id="@item.id" class="btn btn-warning">Update</a>
+                        <a class="btn btn-danger btn-sweet-delete">Delete</a>
+                       </td>
+             
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
